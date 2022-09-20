@@ -64,7 +64,6 @@ defmodule Rockelivery.MixProject do
       {:excoveralls, "~> 0.10", only: :test},
       {:mox, "~> 1.0", only: :test},
       {:bypass, "~> 2.1", only: :test}
-
     ]
   end
 

@@ -16,11 +16,11 @@ defmodule RockeliveryWeb.Auth.Guardian do
     with {:ok, %User{password_hash: hash} = user} <- UserGet.by_id(user_id),
          true <- Pbkdf2.verify_pass(password, hash),
          {:ok, token, _claims} <- encode_and_sign(user) do
-           {:ok, token}
-         else
-          false -> {:error, Error.build(:unauthorized, "Please verify your credentials")}
-          error -> error
-         end
+      {:ok, token}
+    else
+      false -> {:error, Error.build(:unauthorized, "Please verify your credentials")}
+      error -> error
+    end
   end
 
   def authenticate(_), do: {:error, Error.build(:bad_request, "Invalid or missing params")}

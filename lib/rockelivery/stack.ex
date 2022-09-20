@@ -18,7 +18,7 @@ defmodule Rockelivery.Stack do
 
   @impl true
   def init(stack) do
-  {:ok, stack}
+    {:ok, stack}
   end
 
   @impl true

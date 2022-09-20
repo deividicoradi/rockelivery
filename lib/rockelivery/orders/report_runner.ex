@@ -15,7 +15,7 @@ defmodule Rockelivery.Orders.ReportRunner do
     Logger.info("Report Runner started")
     schedule_report_generation()
 
-  {:ok, state}
+    {:ok, state}
   end
 
   # Server
